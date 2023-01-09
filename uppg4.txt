@@ -1,0 +1,46 @@
+Uppgift 4
+-----------------------------------------------------------------------------
+Tillämpa binary search algoritmen för att hitta ett givet element i en
+två dimensionella ordnad lista (2D matris). Det räcker med att skriva
+en pseudokod. Till exempel,med följande matris:
+
+3   5   7   8   11  14
+22  25  35  36  47  50
+76  86  94  96  100 102
+
+Fråga användare ett tal och returnera i vilken rad och i vilken kolumn
+befinner sig talet.
+
+INPUT 47
+OUTPUT rad 2 kol 5
+-----------------------------------------------------------------------------
+START
+    FUNCTION binSearchOnMatrix(matrix, X, rows, cols) 
+        FOR each index FROM 0 to rows-1:
+            SET start to 0
+            SET end to cols-1
+            WHILE start <= end:
+                COMPUTE mid as start + (end-start)/2
+                IF matrix[i][mid] == X THEN
+                    DISPLAY "Found at row i+1 col mid+1"
+                ELSE
+                    IF matrix[i][mid] < X THEN
+                        RETURN start = mid + 1
+                    ELSE
+                        RETURN end = mid - 1
+                    ENDIF
+                ENDIF
+            ENDWHILE
+        ENDFOR
+        
+        DISPLAY Not found
+    END FUNCTION
+
+    SET matrix to { {3, 5, 7, 8, 11, 14},
+                    {22, 25, 35, 36, 47, 50},
+                    {76, 86, 94, 96, 100, 102} };
+    
+    READ searchNum FROM user
+    
+    CALL binSearchOnMatrix(matrix, searchNum, 3, 6)
+STOP

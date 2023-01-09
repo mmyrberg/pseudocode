@@ -1,0 +1,20 @@
+Uppgift 2
+-----------------------------------------------------------------------------
+Följande algoritm har en tid komplexitet O(N*N*N)
+
+int i,j,k,l=0;
+for(i=0;i<N;i++)
+    for(j=0;j<N;j++)
+        for(k=0;k<N;k++)
+            l++;
+
+Föreslår en pseudokod för att uppnå samma resultat (samma l) med en tid
+komplexitet O(N)
+-----------------------------------------------------------------------------
+START
+    SET l to 0
+
+    FOR each index FROM 0 to (N*N*N)-1:
+        INCREMENT l
+    ENDFOR
+STOP

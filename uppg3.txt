@@ -1,0 +1,44 @@
+Uppgift 3
+-----------------------------------------------------------------------------
+Skriv pseudokod för följande problem: Given en lista hitta och ta bort alla 
+dubblett d.v.s alla likadana element. 
+
+Till exempel:
+INPUT {1,3,2,4,2,1,5,7,9}
+OUTPUT {1,3,2,4,5,7,9}
+-----------------------------------------------------------------------------
+START
+    FUNCTION removeDuplicates(list, lenghtOfList)
+        IF lenghtOfList is 0 or 1 THEN
+            RETURN lenghtOfList
+
+        SET i to 0
+
+        REPEAT
+            SET j to i+1
+            WHILE j < lenghtOfList
+                IF list[i] == list[j] THEN
+                    SET k to j
+                    FOR each k < lenghtOfList:
+                        SET list[k] to list[k+1]
+                    ENDFOR
+                    DECREMENT lenghtOfList
+                ELSE
+                    INCREMENT j
+                ENDIF
+            ENDWHILE
+            INCREMENT i
+        UNTIL i is lenghtOfList-1
+
+        RETURN lenghtOfList
+    END FUNCTION
+
+    SET list1 to {1,3,2,4,2,1,5,7,9}
+    SET size to the length of list1
+
+    SET size to (CALL) removeDuplicates with list1 and size
+
+    FOR each index FROM 0 to size-1:
+        DISPLAY list1[index]
+    ENDFOR
+STOP
